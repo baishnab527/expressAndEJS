@@ -1,0 +1,96 @@
+
+
+<div class="container-fluid ">
+    <div class="row">
+
+        <div class="col-md-2 ">
+            <div class="table-left shadow">
+                <h4 class="text-center">Dashbord</h4>
+                <a href="/create" class="buttun-design">Create Product <i class="fa-solid fa-circle-plus"></i> </a>
+                <a href="#" class="buttun-design">Product Table</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-10 my-2">
+            <div class="card shadow">
+                <div class="card-header text-center text-light">
+                    <h2>Product Information Dashbord</h2>
+                </div>
+                <div class="card-body">
+
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr class="text-center">
+                                <th>SI No</th>
+                                <th>Photo</th>
+                                <th>Name</th>
+                                <th>Regular Price</th>
+                                <th>Sale Price</th>
+                                <th>Color</th>
+                                <th>Stock</th>
+                                <th>Size</th>
+                                <th>Weight</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                         <% products.forEach((item, index) => { %>
+                            <tr class="text-center align-middle">
+                                <td><%= index + 1 %></td>
+                                <td>
+                                    <img style="height: 60px;
+                                     width: 60px;
+                                     object-fit: cover;
+                                     border-radius: 50%;
+                                     border: 2px solid white;"
+                                     src="/product/<%= item.photo %>"
+                                     alt="Product image">
+                                </td>
+                                <td><%= item.name %></td>
+                                <td><%= item.regularPrice %></td>
+                                <td><%= item.salePrice %></td>
+                                <td><%= item.colors %></td>
+                                <td><%= item.stock  %> pcs</td>
+                                <td><%= item.size %> Inch</td>
+                                <td><%= item.weight %>kg</td>
+                                <td>
+                                    <a href="/single/<%= item.slug %>" class="btn btn-sm btn-primary" > <i class="fa-solid fa-eye"></i></a>
+                                    <a href="/edit/<%= item.id %>" class="btn btn-sm btn-warning" > <i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="/delete/<%= item.id %>" class="btn btn-sm btn-danger" > <i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                         <% })  %>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
